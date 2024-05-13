@@ -1,0 +1,12 @@
+numpy
+transformers
+datasets
+diffusers
+accelerate
+torch
+torchvision
+huggingface_hub
+tqdm
+pyiqa
+torchmetrics
+matplotlib

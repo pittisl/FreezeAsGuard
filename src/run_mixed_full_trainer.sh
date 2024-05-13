@@ -1,0 +1,19 @@
+accelerate launch mixed_full_trainer.py \
+  --pretrained_model_name_or_path="../sd15_target_unlearned" \
+  --target_dataset_name="../ff25" \
+  --innocent_dataset_name="logo-wizard/modern-logo-dataset" \
+  --caption_column="text" \
+  --resolution=512 --center_crop --random_flip \
+  --train_batch_size=1 \
+  --gradient_accumulation_steps=4 \
+  --gradient_checkpointing \
+  --mixed_precision="bf16" \
+  --max_train_steps=2000 \
+  --checkpointing_steps=4000 \
+  --learning_rate=1e-05 \
+  --max_grad_norm=1 \
+  --lr_scheduler="constant" --lr_warmup_steps=0 \
+  --target_idx="0,1,2,3,4" \
+  --num_samples_per_target_idx=100 \
+  --num_innocent_samples=100 \
+  --output_dir="../sd15_target_relearned_5" \

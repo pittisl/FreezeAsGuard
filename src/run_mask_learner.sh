@@ -1,0 +1,28 @@
+accelerate launch mask_learner.py \
+  --pretrained_model_name_or_path="../sd15_target_unlearned" \
+  --finetuned_model_name_or_path="../sd15_target_relearned_5" \
+  --target_dataset_name="../ff25" \
+  --innocent_dataset_name="logo-wizard/modern-logo-dataset" \
+  --caption_column="text" \
+  --resolution=512 --center_crop --random_flip \
+  --train_batch_size=16 \
+  --gradient_accumulation_steps=1 \
+  --gradient_checkpointing \
+  --mixed_precision="bf16" \
+  --max_train_steps=2000 \
+  --checkpointing_steps=4000 \
+  --learning_rate=1e-05 \
+  --max_grad_norm=1 \
+  --lr_scheduler="constant" --lr_warmup_steps=0 \
+  --target_idx="0,1,2,3,4" \
+  --num_samples_per_target_idx=100 \
+  --num_innocent_samples=100 \
+  --temperature=0.2 \
+  --freeze_ratio=0.2 \
+  --c_sparsity=5e3 \
+  --mask_lr=1e1 \
+  --user_lr=1e-5 \
+  --user_interval=5 \
+  --output_dir="aux-model" \
+  --mask_output_dir="mask_t_0-4_i_logo_20_included" \
+  --plot_mask \

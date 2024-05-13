@@ -1,0 +1,17 @@
+accelerate launch innocent_trainer.py \
+  --pretrained_model_name_or_path="../sd15_target_unlearned" \
+  --dataset_name="logo-wizard/modern-logo-dataset" \
+  --resolution=512 --center_crop --random_flip \
+  --train_batch_size=1 \
+  --gradient_accumulation_steps=4 \
+  --gradient_checkpointing \
+  --mixed_precision="bf16" \
+  --max_train_steps=2000 \
+  --checkpointing_steps=4000 \
+  --learning_rate=1e-05 \
+  --max_grad_norm=1 \
+  --lr_scheduler="constant" --lr_warmup_steps=0 \
+  --output_dir="../sd15_logo_m20" \
+  --user_start_idx=100 \
+  --finetune_scheme="learned_mask" \
+  --mask_dir="mask_t_0-4_i_logo_20_included" \
