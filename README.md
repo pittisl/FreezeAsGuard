@@ -1,7 +1,7 @@
 # FreezeAsGuard: Mitigating Illegal Adaptation of Diffusion Models via Selective Tensor Freezing
 
 ## Introduction
-This is the official code repository for the paper "FreezeAsGuard: Mitigating Illegal Adaptation of Diffusion Models via Selective Tensor Freezing". FreezeAsGuard is a new technique for mitigating illegal adaptation of diffusion models by selectively freezing model tensors that are adaptation-critical for illegal domains but still retaining the representation power on innocent domains.
+This is the official code repository for the paper ["FreezeAsGuard: Mitigating Illegal Adaptation of Diffusion Models via Selective Tensor Freezing"](https://arxiv.org/pdf/2405.17472). FreezeAsGuard is a new technique for mitigating illegal adaptations of diffusion models by selectively freezing model tensors that are adaptation-critical for illegal domains but still retain the representation power on innocent domains.
 
 ## Requirement
 Install all the required packages.
