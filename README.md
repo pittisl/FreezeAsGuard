@@ -156,3 +156,12 @@ python3 evaluate_fid_topiq_target.py \
   --seed=6666 \
   --result_dir="sd15_t_0_full_vs_m20.txt" \
 ```
+## Citation
+```
+@article{huang2024freezeasguard,
+  title={FreezeAsGuard: Mitigating Illegal Adaptation of Diffusion Models via Selective Tensor Freezing},
+  author={Huang, Kai and Gao, Wei},
+  journal={arXiv preprint arXiv:2405.17472},
+  year={2024}
+}
+```
